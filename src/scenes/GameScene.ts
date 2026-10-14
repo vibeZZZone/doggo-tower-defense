@@ -56,7 +56,6 @@ export default class GameScene extends Phaser.Scene {
       (sum, point, index) => sum + distanceBetween(point, PATH[index]),
       0
     );
-    this.rangeGraphic = this.add.graphics();
   }
 
   create(): void {
