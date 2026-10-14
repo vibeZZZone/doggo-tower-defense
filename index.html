@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f1df">
+    <meta name="description" content="Защити запас лакомств от белок вместе с отрядом храбрых собак!">
+    <title>Лапы на страже! — Doggo Tower Defense</title>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Лапы на страже — главная">
+          <span class="brand-mark" aria-hidden="true">🐾</span>
+          <span><strong>Лапы на страже!</strong><small>КОМАНДА ДОБРЫХ ХВОСТОВ</small></span>
+        </a>
+        <div class="stats" aria-label="Игровая статистика">
+          <div class="stat"><span aria-hidden="true">🦴</span><span class="stat-label">Косточки</span><b id="bones">180</b></div>
+          <div class="stat"><span aria-hidden="true">❤️</span><span class="stat-label">Жизни</span><b id="lives">10</b></div>
+          <div class="stat"><span aria-hidden="true">🌊</span><span class="stat-label">Волна</span><b id="wave">0</b></div>
+        </div>
+      </header>
+      <section class="intro">
+        <div>
+          <p class="eyebrow">ОСТОРОЖНО, БЕЛКИ!</p>
+          <h1>Защити корзину с вкусняшками</h1>
+          <p class="subtitle">Расставь хвостатых защитников и не дай лесным воришкам добраться до печенья.</p>
+        </div>
+        <div class="top-actions">
+          <button id="pause-button" class="icon-button" type="button" aria-label="Пауза" title="Пауза">Ⅱ <span>Пауза</span></button>
+          <button id="speed-button" class="icon-button" type="button" aria-label="Скорость игры" title="Скорость игры">▶ <span>1×</span></button>
+        </div>
+      </section>
+      <section class="game-layout" aria-label="Игровое поле и выбор защитников">
+        <div class="board-wrap">
+          <div id="game" aria-label="Игровое поле"></div>
+          <div id="toast" class="toast" role="status" aria-live="polite"></div>
+          <div id="game-over" class="game-over" hidden>
+            <span class="game-over-icon" aria-hidden="true">🧺</span>
+            <h2>Ой, печенье украли!</h2>
+            <p>Белки добрались до корзины. Попробуем ещё раз?</p>
+            <button id="restart-button" class="primary-button" type="button">Играть снова</button>
+          </div>
+        </div>
+        <aside class="sidebar">
+          <div class="panel-heading">
+            <div><p class="eyebrow">ТВОЙ ОТРЯД</p><h2>Выбери защитника</h2></div>
+            <span class="paw-stamp" aria-hidden="true">🐾</span>
+          </div>
+          <div class="tower-list">
+            <button class="tower-card selected" type="button" data-tower="beagle">
+              <span class="dog-icon beagle">🐶</span>
+              <span class="tower-copy"><b>Бигль</b><small>Быстрые броски</small></span>
+              <span class="tower-cost">🦴 60</span>
+            </button>
+            <button class="tower-card" type="button" data-tower="shepherd">
+              <span class="dog-icon shepherd">🐕</span>
+              <span class="tower-copy"><b>Овчарка</b><small>Дальний дозор</small></span>
+              <span class="tower-cost">🦴 100</span>
+            </button>
+            <button class="tower-card" type="button" data-tower="corgi">
+              <span class="dog-icon corgi">🐕‍🦺</span>
+              <span class="tower-copy"><b>Корги</b><small>Мощный бросок</small></span>
+              <span class="tower-cost">🦴 140</span>
+            </button>
+          </div>
+          <div class="selection-box">
+            <div class="selection-title"><span id="selection-icon">🐶</span><b id="selection-name">Бигль</b><span id="selection-level" class="level-badge" hidden>Ур. 1</span></div>
+            <p id="selection-description">Выбран защитник. Нажми на свободную траву, чтобы поставить его.</p>
+            <button id="upgrade-button" class="upgrade-button" type="button" disabled>⬆ Улучшить <span id="upgrade-cost">🦴 —</span></button>
+          </div>
+          <button id="wave-button" class="primary-button wave-button" type="button">
+            <span>Начать волну</span><span class="button-arrow" aria-hidden="true">→</span>
+          </button>
+          <p id="wave-hint" class="wave-hint">Подготовь отряд — белки уже в пути!</p>
+          <div class="tip"><span aria-hidden="true">💡</span><p><b>Совет тренера</b><br>Ставь собак у поворотов — так они дольше держат белок в зоне атаки.</p></div>
+        </aside>
+      </section>
+      <footer class="footer"><span>🐾 Сделано с любовью и печеньками</span><span>Защитники не кусаются. Почти.</span></footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
